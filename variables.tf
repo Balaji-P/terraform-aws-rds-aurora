@@ -22,6 +22,11 @@ variable "allowed_security_groups_count" {
   default     = 0
 }
 
+variable "allowed_cidrs" {
+  description = "A list of Security Group CIDRs to allow access to."
+  default     = []
+}
+
 variable "vpc_id" {
   description = "VPC ID"
 }
