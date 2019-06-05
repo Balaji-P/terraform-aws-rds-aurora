@@ -164,5 +164,6 @@ resource "aws_security_group_rule" "default_ingress_cidrs" {
   protocol                 = "tcp"
   cidr_blocks              = var.allowed_cidrs
   security_group_id        = aws_security_group.this.id
+  count                    = (length(compact(var.allowed_cidrs)) == 0 ? 0 : 1)
 }
 
